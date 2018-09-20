@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="SQ">
+        <item>Name</item>
+        <item>q</item>
+        <item>w</item>
+        <item>d</item>
+        <item>g</item>
+    </string-array>
+
+    <string name="app_name">DMS</string>
+    <string name="action_settings">Settings</string>
+    <string name="email">Email</string>
+    <string name="passowrd">Password</string>
+    <string name="signin">Sign In</string>
+    <string name="login">LOGIN</string>
+    <string name="show_pwd">Show Password</string>
+    <string name="hide_pwd">Hide Password</string>
+    <string name="forgot">Forgot Password</string>
+    <string name="closebutton">Close Button for Activity</string>
+    <string name="newUser">Sign Up here.</string>
+    <string name="Name">Name</string>
+    <string name="mobileNumber">Mobile Number</string>
+    <string name="address">Address</string>
+    <string name="confirmPassword">Confirm Password</string>
+    <string name="signUp">Sign Up</string>
+    <string name="already_user">Already have Account? Login here.</string>
+    <string name="registered_emailid">Please Enter Your Registered Email Below:</string>
+    <string name="submit">SUBMIT</string>
+    <string name="back">BACK</string>
+    <string name="add_sr">ADD</string>
+    <string name="resgister">Register</string>
+
+    <string name="addOrderButton">Add</string>
+    <string name="orderDateTemporary">DD/MM/YY</string>
+    <string name="orderNameTemp">Order name</string>
+    <string name="orderStatusTemp">Order Status</string>
+    <string name="title_activity_sales_rep">SalesRep</string>
+    <string name="title_activity_manage_sales_rep">SalesRep</string>
+
+    <string name="order_date_placeholder">DD/MM/YY</string>
+    <string name="order_name_placeholder">Order name</string>
+    <string name="order_status_placeholder">Order Status</string>
+    <string name="main_activity_title_placeholder">Title</string>
+    <string name="main_view_desc_placeholder">description</string>
+    <string name="main_view_orders_title">Orders</string>
+    <string name="main_view_orders_desc">View your orders</string>
+    <string name="main_view_products_desc">View Products and related details</string>
+    <string name="main_view_products_title">Products</string>
+    <string name="order_main_title">Orders</string>
+    <string name="main_activity_title_salesrep">Sales Rep</string>
+    <string name="main_view_desc_salesrep">Manage sales reps</string>
+    <string name="main_view_title_shops">Shops</string>
+    <string name="main_view_desc_shops">View shops</string>
+
+</resources>

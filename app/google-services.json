@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "561248903683",
+    "firebase_url": "https://mad-dms.firebaseio.com",
+    "project_id": "mad-dms",
+    "storage_bucket": "mad-dms.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:561248903683:android:cfc18bbff18b9ceb",
+        "android_client_info": {
+          "package_name": "com.mad.dms"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "561248903683-d5i407bcijbm52prs1mngvmngfkm2d8u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBk9glQLRgIE6TqTwQ8S5b8F_XaMc2Yc54"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
