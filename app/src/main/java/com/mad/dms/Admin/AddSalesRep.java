@@ -98,7 +98,7 @@ public class AddSalesRep extends AppCompatActivity {
 
                     boolean result = udb.addInfo(getName, getEmailId, getPhoneNo, getPassword);
 
-                    if (result) {
+                    if (result == true) {
                         Toast msg = Toast.makeText(AddSalesRep.this, "Sales-Rep Added SuccessFully.", Toast.LENGTH_SHORT);
                         msg.show();
                     } else {
