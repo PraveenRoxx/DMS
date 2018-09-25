@@ -48,6 +48,7 @@ public class AddSalesRep extends AppCompatActivity {
                 String getPassword = password_field.getText().toString();
                 String getConPassword = con_password_field.getText().toString();
 
+                boolean isEmailAvailable = udb.checkUserEmail(getEmailId);
                 //name pattern
                 String r1 = "^[a-zA-Z]{2,30}$";
                 Pattern p1 = Pattern.compile(r1);
@@ -89,6 +90,9 @@ public class AddSalesRep extends AppCompatActivity {
                     msg.show();
                 } else if (!getConPassword.equals(getPassword)) {
                     Toast msg = Toast.makeText(AddSalesRep.this, "Password Does Not Match", Toast.LENGTH_SHORT);
+                    msg.show();
+                } else if (isEmailAvailable == false) {
+                    Toast msg = Toast.makeText(AddSalesRep.this, "Email is Used Already !!!", Toast.LENGTH_SHORT);
                     msg.show();
                 } else {
 

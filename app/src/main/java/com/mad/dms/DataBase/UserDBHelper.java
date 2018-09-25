@@ -12,19 +12,21 @@ import com.mad.dms.Classes.User;
 import java.util.ArrayList;
 
 public class UserDBHelper extends SQLiteOpenHelper {
-    public static final int DATABASE_VERSION = 1;
-    public static final String DATABASE_NAME = "dms.db";
-    public static final String USER_TABLE = "User";
-    public static final String USER_ID = "UserID";
-    public static final String USER_NAME = "Name";
-    public static final String USER_EMAIL = "Email";
-    public static final String USER_PHONE = "Phone";
-    public static final String USER_PASSWORD = "Password";
-    public static final String POSITION = "Position";
-    public static final String ADMIN_TABLE = "Admin";
-    public static final String ADMIN_ID = "AdminID";
-    public static final String ADMIN_EMAIL = "Email";
-    public static final String ADMIN_PASSWORD = "Password";
+    private static final int DATABASE_VERSION = 1;
+    private static final String DATABASE_NAME = "dms.db";
+    private static final String USER_TABLE = "User";
+    private static final String USER_ID = "UserID";
+    private static final String USER_NAME = "Name";
+    private static final String USER_EMAIL = "Email";
+    private static final String USER_PHONE = "Phone";
+    private static final String USER_PASSWORD = "Password";
+
+    //admin
+    private static final String POSITION = "Position";
+    private static final String ADMIN_TABLE = "Admin";
+    private static final String ADMIN_ID = "AdminID";
+    private static final String ADMIN_EMAIL = "Email";
+    private static final String ADMIN_PASSWORD = "Password";
 
     public UserDBHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -100,6 +102,7 @@ public class UserDBHelper extends SQLiteOpenHelper {
             user.setPassword(cursor.getString(cursor.getColumnIndex(USER_PASSWORD)));
             userList.add(user);
         }
+
         return userList;
     }
 
@@ -113,6 +116,18 @@ public class UserDBHelper extends SQLiteOpenHelper {
         }
 
         return password;
+    }
+
+    public boolean checkUserEmail(String email) {
+        boolean UserEmail = true;
+        SQLiteDatabase db = getReadableDatabase();
+
+        Cursor cursor = db.rawQuery("SELECT * FROM " + USER_TABLE + " WHERE Email ='" + email + "' ", null);
+        if (cursor.moveToNext()) {
+            UserEmail = false;
+        }
+
+        return UserEmail;
     }
 
     public boolean UpdateInfo(String id, String name, String email, String phone, String password) {
