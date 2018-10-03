@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.mad.dms.Admin.AdminProfileSettings;
+import com.mad.dms.Admin.ManageSalesRep;
 import com.mad.dms.DataBase.UserDBHelper;
 import com.mad.dms.R;
 import com.mad.dms.SignIn.Login;
@@ -78,6 +79,8 @@ public class SalesRepProfileSettings extends AppCompatActivity implements View.O
         PhoneNo = pro_phone.getText().toString();
         Password = pro_password.getText().toString();
 
+        boolean isEmailAvailable = udb.checkUserEmail(Email);
+
         //name pattern
         String r1 = "^[a-zA-Z]{2,30}$";
         Pattern p1 = Pattern.compile(r1);
@@ -116,7 +119,10 @@ public class SalesRepProfileSettings extends AppCompatActivity implements View.O
         } else if (Password.length() < 8) {
             Toast msg = Toast.makeText(SalesRepProfileSettings.this, "Minimum Password Length is 8", Toast.LENGTH_SHORT);
             msg.show();
-        } else {
+        } else if (isEmailAvailable == false) {
+            Toast msg = Toast.makeText(SalesRepProfileSettings.this, "Email is Used Already !!!", Toast.LENGTH_SHORT);
+            msg.show();
+        }else {
             boolean result = udb.UpdateSalesRep(Login.sessionEmail,Name, Email,PhoneNo,Password);
 
             if (result == true) {
