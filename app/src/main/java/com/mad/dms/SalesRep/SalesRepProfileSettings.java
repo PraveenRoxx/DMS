@@ -61,7 +61,6 @@ public class SalesRepProfileSettings extends AppCompatActivity implements View.O
         switch (v.getId()) {
             case R.id.RPS_Edit:
                 pro_name.setEnabled(true);
-                pro_email.setEnabled(true);
                 pro_phone.setEnabled(true);
                 pro_password.setEnabled(true);
                 Update.setVisibility(View.VISIBLE);
@@ -78,8 +77,6 @@ public class SalesRepProfileSettings extends AppCompatActivity implements View.O
         Email = pro_email.getText().toString();
         PhoneNo = pro_phone.getText().toString();
         Password = pro_password.getText().toString();
-
-        boolean isEmailAvailable = udb.checkUserEmail(Email);
 
         //name pattern
         String r1 = "^[a-zA-Z]{2,30}$";
@@ -118,9 +115,6 @@ public class SalesRepProfileSettings extends AppCompatActivity implements View.O
             msg.show();
         } else if (Password.length() < 8) {
             Toast msg = Toast.makeText(SalesRepProfileSettings.this, "Minimum Password Length is 8", Toast.LENGTH_SHORT);
-            msg.show();
-        } else if (isEmailAvailable == false) {
-            Toast msg = Toast.makeText(SalesRepProfileSettings.this, "Email is Used Already !!!", Toast.LENGTH_SHORT);
             msg.show();
         }else {
             boolean result = udb.UpdateSalesRep(Login.sessionEmail,Name, Email,PhoneNo,Password);
